@@ -95,7 +95,7 @@ export default function App() {
     {
       title: "Civic Connect",
       description: " built Smart City Reporter — a civic platform where anyone can report an issue or upvote existing ones with zero login required. Proof of resolution is provided by civil workers — creating full transparency between citizens and the government.",
-      image: "/public/civic.png",
+      image: "/civic.png",
       githubUrl: "#",
       demoUrl: "http://civicconnect.xo.je",
       tags: ["FastAPI", "Jinja2", "SQLite", "Docker", "CI/CD"]
@@ -103,21 +103,21 @@ export default function App() {
     {
       title: "Hybrid RAG Bot",
       description: "This project is an advanced, multi-format (PDF, CSV, XML) Question-Answering (QA) chatbot that runs 100% locally on your machine.It features an Ultimate Hybrid RAG Pipeline that uses a Smart Router to intelligently decide between Tesseract (fast OCR) and a multimodal vision model (LLaVA) to analyze text, scanned documents, charts, and images.",
-      image: "/public/rag.png",
+      image: "/rag.png",
       githubUrl: "https://github.com/Yadnesh26/Hybrid-RAG-Bot",
       tags: ["RAG", "LLM", "LangChain", "Ollama", "Tesseract"]
     },
     {
       title: "Glide View",
       description: "GlideView, an Android application prototype designed to address the common issue of motion sickness while reading on mobile devices in transit. This project explores using a device's gyroscope to create a more stable and comfortable viewing experience.",
-      image: "/public/glideview.png",
+      image: "/glideview.png",
       githubUrl: "https://github.com/Yadnesh26/GlideView-Android-AppStabilizer",
       tags: ["Android", "Kotlin", "Gyroscope", "Jetpack Compose"]
     },
     {
       title: "Task Board",
       description: "Full-featured task management and productivity application built from the ground up — with performance, responsiveness, and user experience at its core.",
-      image: "/public/taskboard.png",
+      image: "/taskboard.png",
       githubUrl: "https://github.com/Yadnesh26/Taskboard-",
       demoUrl: "https://68861f93e970603e4f3f3007--taskboard-managing-site.netlify.app/",
       tags: ["React", "Tailwind", "git"]
@@ -125,7 +125,7 @@ export default function App() {
     {
       title: "AI Interview Copilot",
       description: "AI assistant that helps HR teams and interviewers generate structured, role-specific pre-interview reports from resumes, LinkedIn profiles, and project portfolios!",
-      image: "/public/interview.png",
+      image: "/interview.png",
       githubUrl: "https://github.com/Yadnesh26/Taskboard-",
       tags: ["LLMs", "Data Extraction", "Data Processing"]
     },
