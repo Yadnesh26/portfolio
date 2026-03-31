@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC | Engineering Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#131314",
+              "on-secondary-fixed": "#380039",
+              "surface": "#131314",
+              "secondary": "#ffaaf7",
+              "secondary-fixed-dim": "#ffaaf7",
+              "surface-variant": "#353436",
+              "on-error": "#690005",
+              "surface-tint": "#00dddd",
+              "outline": "#839493",
+              "outline-variant": "#3a4a49",
+              "surface-container-lowest": "#0e0e0f",
+              "tertiary-fixed-dim": "#76d6d5",
+              "primary": "#ffffff",
+              "surface-container": "#201f20",
+              "on-secondary": "#5a005d",
+              "inverse-on-surface": "#313031",
+              "on-surface": "#e5e2e3",
+              "on-tertiary": "#003737",
+              "primary-fixed-dim": "#00dddd",
+              "on-primary-fixed": "#002020",
+              "surface-container-high": "#2a2a2b",
+              "on-tertiary-fixed-variant": "#004f4f",
+              "inverse-surface": "#e5e2e3",
+              "surface-bright": "#3a393a",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "secondary-container": "#8f0193",
+              "on-surface-variant": "#b9cac9",
+              "surface-dim": "#131314",
+              "on-background": "#e5e2e3",
+              "on-secondary-container": "#ffa3f7",
+              "primary-container": "#00fbfb",
+              "on-primary": "#003737",
+              "surface-container-highest": "#353436",
+              "secondary-fixed": "#ffd7f7",
+              "on-tertiary-fixed": "#002020",
+              "error-container": "#93000a",
+              "on-primary-container": "#007070",
+              "on-primary-fixed-variant": "#004f4f",
+              "tertiary": "#ffffff",
+              "primary-fixed": "#00fbfb",
+              "tertiary-fixed": "#93f2f2",
+              "inverse-primary": "#006a6a",
+              "tertiary-container": "#93f2f2",
+              "on-tertiary-container": "#007070",
+              "on-secondary-fixed-variant": "#800084",
+              "surface-container-low": "#1c1b1c"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            background: rgba(53, 52, 54, 0.6);
+        }
+        /* Custom scrollbar for technical feel */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131314; }
+        ::-webkit-scrollbar-thumb { background: #3a4a49; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131314]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(0,221,221,0.06)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#00fbfb]" data-icon="polyline">polyline</span>
+<span class="text-xl font-black tracking-tighter text-white bg-clip-text bg-gradient-to-r from-white to-[#00fbfb] font-['Space_Grotesk'] tracking-tight font-bold uppercase">KINETIC</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#00fbfb] font-bold font-['Space_Grotesk'] text-sm tracking-widest uppercase transition-colors duration-300" href="#">ARCHIVE</a>
+<a class="text-slate-400 font-medium font-['Space_Grotesk'] text-sm tracking-widest uppercase hover:text-[#00fbfb] transition-colors duration-300" href="#">PROCESS</a>
+<a class="text-slate-400 font-medium font-['Space_Grotesk'] text-sm tracking-widest uppercase hover:text-[#00fbfb] transition-colors duration-300" href="#">LABS</a>
+<a class="text-slate-400 font-medium font-['Space_Grotesk'] text-sm tracking-widest uppercase hover:text-[#00fbfb] transition-colors duration-300" href="#">ABOUT</a>
+</nav>
+<button class="bg-primary-container/10 border border-primary-container/20 px-6 py-2 text-[#00fbfb] font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-bold uppercase hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 scale-95 active:scale-90">
+            CONTACT
+        </button>
+</header>
+<!-- NavigationDrawer (Mobile/Sidebar Logic) -->
+<aside class="fixed left-0 top-0 h-full z-40 hidden lg:flex flex-col bg-[#0e0e0f] h-full w-64 border-r border-white/5 pt-24">
+<div class="px-8 mb-12">
+<h2 class="font-['Space_Grotesk'] text-sm tracking-widest uppercase text-slate-500 mb-6">SCHEMATICS</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 py-3 px-4 bg-gradient-to-r from-[#00fbfb]/10 to-transparent text-[#00fbfb] border-l-2 border-[#00fbfb] transition-all duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="database">database</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-widest uppercase">ARCHIVE</span>
+</div>
+<div class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="architecture">architecture</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-widest uppercase">PROCESS</span>
+</div>
+<div class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="biotech">biotech</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-widest uppercase">LABS</span>
+</div>
+<div class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+<span class="font-['Space_Grotesk'] text-sm tracking-widest uppercase">ABOUT</span>
+</div>
+</div>
+</div>
+<div class="mt-auto px-8 pb-12">
+<div class="p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<p class="font-['Space_Grotesk'] text-[10px] tracking-widest text-on-surface-variant uppercase mb-2">Current System</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#00fbfb] animate-pulse"></div>
+<span class="text-xs font-mono text-primary">v2.4.0_STABLE</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="lg:ml-64 min-h-screen relative overflow-hidden">
+<!-- Hero Section with Canvas Shell -->
+<section class="relative h-screen flex flex-col items-center justify-center px-8 md:px-24">
+<!-- Generative Particle Canvas Placeholder -->
+<div class="absolute inset-0 z-0 bg-background overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background z-[2]"></div>
+<!-- This canvas is a visual representation for the UI design phase -->
+<canvas class="particle-canvas opacity-60" id="particleCanvas"></canvas>
+</div>
+<!-- Hero Content Overlay -->
+<div class="relative z-10 text-center max-w-5xl">
+<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary-container/20 bg-primary-container/5 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ffaaf7]"></span>
+<span class="font-label text-[10px] tracking-[0.3em] uppercase text-secondary font-bold">Available for Core Research</span>
+</div>
+<h1 class="font-headline text-5xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-white uppercase leading-[0.9] mb-8">
+                    ENGINEERING<br/>
+<span class="text-transparent stroke-text" style="-webkit-text-stroke: 1px rgba(255,255,255,0.3);">EXPERIENCE</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Product Designer &amp; Creative Technologist focused on building digital futures through 
+                    <span class="text-primary font-medium">mathematical precision</span> and <span class="text-[#00fbfb] font-medium">human-centric</span> logic.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="group relative px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-sm tracking-[0.2em] uppercase rounded-sm shadow-[0_0_20px_rgba(0,251,251,0.2)] hover:shadow-[0_0_40px_rgba(0,251,251,0.4)] transition-all duration-500 overflow-hidden">
+<span class="relative z-10">VIEW SCHEMATICS</span>
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+</button>
+<button class="px-10 py-5 border border-outline-variant/30 text-on-surface hover:border-primary/50 transition-colors font-headline font-bold text-sm tracking-[0.2em] uppercase rounded-sm flex items-center gap-3">
+                        PROCESS.PDF
+                        <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Technical Detail Components (Asymmetric Callouts) -->
+<div class="hidden xl:block absolute top-1/4 right-12 z-20">
+<div class="flex flex-col items-end gap-2 group">
+<div class="w-32 h-[1px] bg-outline-variant/40 group-hover:bg-[#00fbfb]/60 transition-colors"></div>
+<span class="font-label text-[10px] tracking-widest text-slate-500 uppercase">Input_Coord: 40.7128° N</span>
+<span class="font-label text-[10px] tracking-widest text-slate-500 uppercase">Visual_Node: Stable</span>
+</div>
+</div>
+<div class="hidden xl:block absolute bottom-1/4 left-12 z-20">
+<div class="flex flex-col items-start gap-2 group">
+<span class="font-label text-[10px] tracking-widest text-slate-500 uppercase">System_Load: 0.04ms</span>
+<span class="font-label text-[10px] tracking-widest text-slate-500 uppercase">Kernel_Render: Active</span>
+<div class="w-32 h-[1px] bg-outline-variant/40 group-hover:bg-[#ffaaf7]/60 transition-colors"></div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 opacity-50">
+<span class="font-label text-[10px] tracking-[0.4em] uppercase">Scroll</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Featured Case Study Snippet (Asymmetric Grid) -->
+<section class="py-24 px-8 md:px-24 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-5 space-y-8">
+<h3 class="font-headline text-sm tracking-[0.5em] text-[#00fbfb] uppercase">Featured_Release</h3>
+<h2 class="font-headline text-4xl md:text-6xl font-bold text-white uppercase leading-tight">Project<br/>Hyperion</h2>
+<p class="text-on-surface-variant leading-relaxed max-w-md">
+                        A decentralized operating system interface designed for extreme-environment hardware. Engineering the bridge between complex data kernels and intuitive touch-gestures.
+                    </p>
+<div class="pt-8">
+<div class="flex gap-4 mb-4">
+<span class="px-3 py-1 bg-surface-container text-[10px] font-label tracking-widest text-slate-400 rounded-sm">UI/UX</span>
+<span class="px-3 py-1 bg-surface-container text-[10px] font-label tracking-widest text-slate-400 rounded-sm">SYSTEM ARCHITECTURE</span>
+<span class="px-3 py-1 bg-surface-container text-[10px] font-label tracking-widest text-slate-400 rounded-sm">2024</span>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-headline text-sm font-bold tracking-[0.2em] group" href="#">
+                            READ THE LOGS
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 relative group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-[#00fbfb]/10 to-[#ffaaf7]/10 rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="relative overflow-hidden rounded-lg aspect-video bg-surface-container-high border border-white/5">
+<img alt="Project Hyperion Visual" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" data-alt="abstract 3d visualization of glowing cyan and purple complex network nodes and lines against a dark obsidian background architectural feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIsk7P7WcH0EEe7AVeFDVk1w4C92-5shYyebwr7bixcqz21qgdG8BiXh8rzhkiqPDCEiG68YBMddUK_W9UoxNPN5vQDJeAGLYD3E_KvmXJrUWjGHjr5_BhN9X3hqYOHv0VT-GsKx-y87RpOLzXmQhFGgWQoAOYSbpOHXMb73_WNBVmcPXvNYl0uaELLcptPkXKL5SkhDXQ7u7qNyn2ea21e1hfi4A2cWkk_rw6xkGrfeIrEnJpZn8POluWn0g_lWnMyR9w7qu-K3a"/>
+<div class="absolute top-4 left-4 p-4 glass-panel rounded-sm border border-white/10 flex flex-col gap-1">
+<span class="font-mono text-[8px] text-primary">SCANNING_ASSETS...</span>
+<div class="w-24 h-1 bg-white/20">
+<div class="w-2/3 h-full bg-[#00fbfb]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="bg-[#131314] w-full py-12 flex flex-col md:flex-row justify-between items-center px-8 border-t border-white/5 mt-20">
+<div class="flex items-center gap-6 mb-8 md:mb-0">
+<span class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-light text-slate-600">©2024 RENDERED_BY_KINETIC</span>
+</div>
+<div class="flex gap-12">
+<a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-light text-slate-600 hover:text-[#ffaaf7] transition-colors opacity-80 hover:opacity-100" href="#">TWITTER</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-light text-slate-600 hover:text-[#ffaaf7] transition-colors opacity-80 hover:opacity-100" href="#">LINKEDIN</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-light text-slate-600 hover:text-[#ffaaf7] transition-colors opacity-80 hover:opacity-100" href="#">READCV</a>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-4">
+<span class="font-['Space_Grotesk'] text-[10px] tracking-[0.2em] font-light text-slate-400">EN_US</span>
+<div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+</div>
+</footer>
+</main>
+<!-- Script for Particle Canvas (Conceptual logic for UI rendering) -->
+<script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 120;
+        const connectionDistance = 150;
+        const mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = (Math.random() * 30) + 1;
+                this.color = ['#00fbfb', '#ffaaf7', '#008080'][Math.floor(Math.random() * 3)];
+                this.angle = Math.random() * Math.PI * 2;
+                this.velocity = Math.random() * 0.5 + 0.1;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            update() {
+                // Wave movement logic
+                this.angle += 0.01;
+                this.y += Math.sin(this.angle) * 0.5;
+
+                // Mouse interaction logic
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 10;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 10;
+                    }
+                }
+            }
+        }
+
+        function init() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connect() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        let opacity = 1 - (distance / connectionDistance);
+                        ctx.strokeStyle = `rgba(0, 251, 251, ${opacity * 0.15})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].draw();
+                particles[i].update();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+    </script>
+</body></html>
