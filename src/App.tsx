@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import FluidMagnetic from "./components/FluidMagnetic";
 import emailjs from '@emailjs/browser';
+import resumePdf from '../assets/Yadnesh_Sonawane_Resume.pdf';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -366,13 +367,16 @@ export default function App() {
                 </ul>
 
                 <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-                  <motion.button
+                  <motion.a
+                    href={resumePdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
                     className="rounded-full bg-gradient-to-r from-red-500 to-purple-600 px-4 py-3 text-sm font-bold tracking-wide text-white shadow-lg shadow-purple-500/20 transition-shadow"
                   >
                     My Resume
-                  </motion.button>
+                  </motion.a>
 
                 </div>
               </motion.div>

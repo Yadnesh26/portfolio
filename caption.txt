@@ -1,0 +1,10 @@
+🚀 Just launched my new portfolio!
+
+Built with React, Vite, and Framer Motion. It covers my work in Backend Dev, AI, and RAG pipelines.
+
+Live: https://yadnesh-portfolio.vercel.app/
+Code: https://github.com/Yadnesh26/portfolio
+
+Check it out and let me know what you think!
+
+#SoftwareEngineering #React #Portfolio #AI
